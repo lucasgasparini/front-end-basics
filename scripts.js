@@ -9,5 +9,9 @@ window.addEventListener("load", function () {
 });
 
 function generateNumberLists() {
-    document.getElementById("numberText").innerHTML = document.getElementById("numberInput").value;
+    document.getElementById("randomNumbers").innerHTML = "<h2>Números Aleatórios</h2>";
+    document.getElementById("ascendingOrder").innerHTML = "<h2>Ordenados de forma crescente</h2>";
+    document.getElementById("descendingOrder").innerHTML = "<h2>Ordenados de forma decrescente</h2>";
+    document.getElementById("ascendingOdd").innerHTML = "<h2>Ímpares crescentes</h2>";
+    document.getElementById("descendingEven").innerHTML = "<h2>Pares decrescentes</h2>";
 }

@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1024px;
+    padding: 20px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container hr {
+    width: 90%;
+}
+#numberInput {
+    width: 50%;
+    height: 30px;
+    text-align: center;
+    font-size: 25px;
+}
+#mainButton {
+    width: 40%;
+    height: 30px;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 15px;
+}
+h2 {
+    text-align: center;
+}

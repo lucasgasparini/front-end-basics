@@ -10,8 +10,18 @@
 
     <body>
         <script src="scripts.js"></script>
-        <input type="number" id="numberInput" autofocus>
-        <p id="numberText"></p>
-        <button id="mainButton" onclick="generateNumberLists()">Gerar listas</button>
+        <div class="container">
+            <h1>Gerador de Números</h1>
+            <hr>
+            <input type="number" id="numberInput" placeholder="Quantos números deseja?" autofocus>
+            <button id="mainButton" onclick="generateNumberLists()">Gerar listas</button>
+            <div id="numbersLists">
+                <div id="randomNumbers"></div>
+                <div id="ascendingOrder"></div>
+                <div id="descendingOrder"></div>
+                <div id="ascendingOdd"></div>
+                <div id="descendingEven"></div>
+            </div>
+        </div>
     </body>
 </html>
