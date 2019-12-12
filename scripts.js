@@ -10,14 +10,25 @@ window.addEventListener("load", function () {
 
 function generateNumberLists() {
     const arraySize = document.getElementById("numberInput").value;
-    const numbersArray = Array.from({length: arraySize}, () => Math.floor(Math.random() * 1000));
-    orderLists(numbersArray);
+    if(arraySize < 10 || arraySize > 100) {
+        document.getElementById("errorMessage").innerHTML = "O número deve estar entre 10 e 100!";
+    } else {
+        document.getElementById("errorMessage").innerHTML = "";
+        const numbersArray = Array.from({length: arraySize}, () => Math.floor(Math.random() * 1000));
+        orderLists(numbersArray);
+    }
 }
 
 function orderLists(numbersArray) {
-    document.getElementById("randomNumbers").innerHTML = numbersArray;
-    document.getElementById("ascendingOrder").innerHTML = numbersArray.sort();
-    document.getElementById("descendingOrder").innerHTML = numbersArray.sort(function(a, b){return b-a});
-    document.getElementById("ascendingOdd").innerHTML = numbersArray.filter((number) => number%2 !== 0).sort(function(a, b){return a-b});
-    document.getElementById("descendingEven").innerHTML = numbersArray.filter((number) => number%2 === 0).sort(function(a, b){return b-a});
+    buildListDisplay("randomNumbers", numbersArray);
+    buildListDisplay("ascendingOrder", numbersArray.sort());
+    buildListDisplay("descendingOrder", numbersArray.sort(function(a, b){return b-a}));
+    buildListDisplay("ascendingOdd", numbersArray.filter((number) => number%2 !== 0).sort(function(a, b){return a-b}));
+    buildListDisplay("descendingEven", numbersArray.filter((number) => number%2 === 0).sort(function(a, b){return b-a}));
+}
+
+function buildListDisplay(element, list) {
+    for (let i = 0; i < list.length; i++) {
+        document.getElementById(element).innerHTML += "<span>"+list[i]+"</span>"
+    }
 }

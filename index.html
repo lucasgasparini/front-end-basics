@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <title>Front End Basics</title>
         <meta name="description" content="Front End Basics">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
     </head>
 
@@ -13,29 +14,30 @@
         <div class="container">
             <h1>Gerador de Números</h1>
             <hr>
-            <input type="number" id="numberInput" placeholder="Quantos números deseja?" autofocus>
+            <input type="number" id="numberInput" placeholder="Quantos números deseja? (10 a 100)" autofocus>
+            <p id="errorMessage"></p>
             <button id="mainButton" onclick="generateNumberLists()">Gerar listas</button>
             <div id="numbersLists">
-                <div>
+                <section>
                     <h2>Números Aleatórios</h2>
-                    <p id="randomNumbers"></p>
-                </div>
-                <div>
+                    <div id="randomNumbers" class="list"></div>
+                </section>
+                <section>
                     <h2>Ordenados de forma crescente</h2>
-                    <p id="ascendingOrder"></p>
-                </div>
-                <div>
+                    <div id="ascendingOrder" class="list"></div>
+                </section>
+                <section>
                     <h2>Ordenados de forma decrescente</h2>
-                    <p id="descendingOrder"></p>
-                </div>
-                <div>
+                    <div id="descendingOrder" class="list"></div>
+                </section>
+                <section>
                     <h2>Ímpares crescentes</h2>
-                    <p id="ascendingOdd"></p>
-                </div>
-                <div>
+                    <div id="ascendingOdd" class="list"></div>
+                </section>
+                <section>
                     <h2>Pares decrescentes</h2>
-                    <p id="descendingEven"></p>
-                </div>
+                    <div id="descendingEven" class="list"></div>
+                </section>
             </div>
         </div>
     </body>
