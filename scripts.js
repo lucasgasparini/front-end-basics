@@ -23,14 +23,14 @@ function generateNumberLists() {
         document.getElementById("errorMessage").innerHTML = "O número deve estar entre 10 e 100!";
     } else {
         document.getElementById("errorMessage").innerHTML = "";
-        const numbersArray = Array.from({length: arraySize}, () => Math.floor(Math.random() * 1000));
+        const numbersArray = Array.from({length: arraySize}, () => Math.floor(Math.random() * 1000)); // LIMITANDO NÚMEROS ATÉ 1000
         orderLists(numbersArray);
     }
 }
 
 function orderLists(numbersArray) {
     buildListDisplay("randomNumbers", numbersArray);
-    buildListDisplay("ascendingOrder", numbersArray.sort());
+    buildListDisplay("ascendingOrder", numbersArray.sort(function(a, b){return a-b}));
     buildListDisplay("descendingOrder", numbersArray.sort(function(a, b){return b-a}));
     buildListDisplay("ascendingOdd", numbersArray.filter((number) => number%2 !== 0).sort(function(a, b){return a-b}));
     buildListDisplay("descendingEven", numbersArray.filter((number) => number%2 === 0).sort(function(a, b){return b-a}));
@@ -38,6 +38,8 @@ function orderLists(numbersArray) {
 
 function buildListDisplay(element, list) {
     for (let i = 0; i < list.length; i++) {
-        document.getElementById(element).innerHTML += "<span>"+list[i]+"</span>"
+        if(list[i] !== 0) {
+            document.getElementById(element).innerHTML += "<span>"+list[i]+"</span>"
+        }
     }
 }
