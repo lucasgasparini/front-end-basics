@@ -8,7 +8,16 @@ window.addEventListener("load", function () {
     });
 });
 
+function resetLists() {
+    document.getElementById("randomNumbers").innerHTML = [];
+    document.getElementById("ascendingOrder").innerHTML = [];
+    document.getElementById("descendingOrder").innerHTML = [];
+    document.getElementById("ascendingOdd").innerHTML = [];
+    document.getElementById("descendingEven").innerHTML = [];
+}
+
 function generateNumberLists() {
+    resetLists();
     const arraySize = document.getElementById("numberInput").value;
     if(arraySize < 10 || arraySize > 100) {
         document.getElementById("errorMessage").innerHTML = "O número deve estar entre 10 e 100!";
