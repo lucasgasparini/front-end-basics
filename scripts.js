@@ -9,9 +9,15 @@ window.addEventListener("load", function () {
 });
 
 function generateNumberLists() {
-    document.getElementById("randomNumbers").innerHTML = "<h2>Números Aleatórios</h2>";
-    document.getElementById("ascendingOrder").innerHTML = "<h2>Ordenados de forma crescente</h2>";
-    document.getElementById("descendingOrder").innerHTML = "<h2>Ordenados de forma decrescente</h2>";
-    document.getElementById("ascendingOdd").innerHTML = "<h2>Ímpares crescentes</h2>";
-    document.getElementById("descendingEven").innerHTML = "<h2>Pares decrescentes</h2>";
+    const arraySize = document.getElementById("numberInput").value;
+    const numbersArray = Array.from({length: arraySize}, () => Math.floor(Math.random() * 1000));
+    orderLists(numbersArray);
+}
+
+function orderLists(numbersArray) {
+    document.getElementById("randomNumbers").innerHTML = numbersArray;
+    document.getElementById("ascendingOrder").innerHTML = numbersArray.sort();
+    document.getElementById("descendingOrder").innerHTML = numbersArray.sort(function(a, b){return b-a});
+    document.getElementById("ascendingOdd").innerHTML = numbersArray.filter((number) => number%2 !== 0).sort(function(a, b){return a-b});
+    document.getElementById("descendingEven").innerHTML = numbersArray.filter((number) => number%2 === 0).sort(function(a, b){return b-a});
 }
